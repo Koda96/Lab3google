@@ -11,12 +11,12 @@ Integrantes:
 
 | Api | Link |
 | ------ | ------ |
-| Recaptcha | [https://developers.google.com/recaptcha][PlDb] |
-| Places API | [https://console.cloud.google.com/apis/library/places-backend.googleapis.com][PlGh] |
-| Directions API | [https://console.cloud.google.com/apis/library/directions-backend.googleapis.com][PlGd] |
-| Distance Matrix API | [https://console.cloud.google.com/apis/library/distance-matrix-backend.googleapis.com][PlOd] |
-| Geocoding API | [https://console.cloud.google.com/apis/library/geocoding-backend.googleapis.com][PlMe] |
-| Maps JavaScript API | [https://console.cloud.google.com/apis/library/maps-backend.googleapis.com][PlGa] |
+| Recaptcha | [https://developers.google.com/recaptcha] |
+| Places API | [https://console.cloud.google.com/apis/library/places-backend.googleapis.com] |
+| Directions API | [https://console.cloud.google.com/apis/library/directions-backend.googleapis.com] |
+| Distance Matrix API | [https://console.cloud.google.com/apis/library/distance-matrix-backend.googleapis.com] |
+| Geocoding API | [https://console.cloud.google.com/apis/library/geocoding-backend.googleapis.com] |
+| Maps JavaScript API | [https://console.cloud.google.com/apis/library/maps-backend.googleapis.com] |
 
 Nuestro Principal objetivo en el trabajo es integrar el framework de python Django con las apis de google, y elegimos
 utilizar Google Maps y Recaptcha.
