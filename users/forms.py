@@ -8,7 +8,7 @@ from .models import UserProfile
 
 class UserForm(UserCreationForm):
 	'''
-	Form that uses built-in UserCreationForm to handel user creation
+	Formulario para hacer handle del user creation
 	'''
 	first_name = forms.CharField(max_length=30, required=True,
 		widget=forms.TextInput(attrs={'placeholder': 'Escribir nombre'}))
@@ -35,7 +35,7 @@ class UserForm(UserCreationForm):
 
 class AuthForm(AuthenticationForm):
 	'''
-	Form that uses built-in AuthenticationForm to handel user auth
+	Formulario para hacer handle del user autenthification
 	'''
 	username = forms.EmailField(max_length=254, required=True,
 		widget=forms.TextInput(attrs={'placeholder': 'Correo Electronico'}))
@@ -51,7 +51,7 @@ class AuthForm(AuthenticationForm):
 
 class UserProfileForm(forms.ModelForm):
 	'''
-	Basic model-form for our user profile that extends Django user model.
+	Modelo basico para el perfil que respeta los modelos de django
 	
 	'''
 	address = forms.CharField(max_length=100, required=True, widget = forms.HiddenInput())

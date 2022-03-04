@@ -66,7 +66,6 @@ function onPlaceChanged (){
         }
         $('#id_address').val(num + " " + addy)
 
-        //find all hidden inputs & ignore csrf token
         var x = $( "input:hidden" );
         for (let i = 0; i < x.length; i++){
             if (x[i].name != "csrfmiddlewaretoken")  
@@ -74,7 +73,6 @@ function onPlaceChanged (){
             x.eq(x).attr("class", 'hidden-el')  
         }
 
-        //fade in the completed form
         $('.hidden-el').fadeIn()
         $('#profile-btn').removeAttr("disabled")
     }
