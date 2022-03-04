@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extend_head %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<h3>LAB3 - Perfil</h3>
+
+<div class="container">
+  {% if request.user.userprofile.has_profile %}
+  <table>
+    <thead>
+      <tr>
+        <th>Campos</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dirección</td>
+        <td>
+          <address>
+            {{request.user.userprofile.address}}<br>
+            {{request.user.userprofile.town}}<br>
+            {{request.user.userprofile.county}}<br>
+            {{request.user.userprofile.post_code}}<br>
+          </address>
+        </td>      
+      </tr>
+    </tbody>
+  </table>
+  </br>
+  <label for="id-google-address">Cambiar dirección</label>
+  {% else %}
+  <label for="id-google-address">Añadir Dirección</label>
+  {% endif %}
+
+  <input type="text" placeholder="*Escribir dirección" id="id-google-address" name="google_address"> <!-- Es para que google prediga lo que se esta escribiendo-->
+
+  <form id="profileform" method="POST" action="/profile"> <!-- Esta asignado a views.profile.view en urls.py-->
+    {% csrf_token %} <!-- Cross site request forgery es para prevenir ataques al servidor -->
+
+   <label for="address" class="hidden-el" hidden>Dirección</label>
+   {{form.address}}
+
+   <label for="town" class="hidden-el" hidden>Ciudad</label>
+   {{form.town}}
+
+   <label for="county" class="hidden-el" hidden>Pais</label>
+   {{form.county}}
+
+   <label for="post_code" class="hidden-el" hidden>Codigo Postal</label>
+   {{form.post_code}}
+
+   <label for="country" class="hidden-el" hidden>Pais</label>
+   {{form.country}}
+
+   <label for="post_code" class="hidden-el" hidden>Longitud</label>
+   {{form.longitude}}
+
+   <label for="country"  class="hidden-el" hidden>Latitud</label>
+   {{form.latitude}}
+
+
+   <button disabled type="submit" id="profile-btn">Actualizar</button>
+ </form>
+
+</div>
+
+{% endblock %}
+
+{% block extend_footer %}
+
+<script type="text/javascript">
+
+  var google_api_key = "{{google_api_key|safe}}"; //Esto viene del archivo views.py, desde los contextos, es la apikey de google
+  var base_country = "{{base_country|safe}}";
+
+</script>
+
+<script src="{% static 'google_places.js' %}"></script>
+
+
+{% endblock %}
